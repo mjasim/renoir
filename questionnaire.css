@@ -1,0 +1,66 @@
+.questionnaireParent{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:90%;
+    width:100%;
+}
+
+.questionnaireContainer{
+    height:85%;
+    width:80%;
+}
+
+.questionnaireInfoBar{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #E9ECEF; 
+    margin-top: 10px; 
+    margin-bottom:30px; 
+    border:solid thin #E9ECEF; 
+    border-radius:50px;
+    width:80%;
+    height:5%;
+}
+
+.questionnaireFooterButtons{
+    display:flex;
+    flex-direction:row;
+    height:10%;
+    width:80%;
+}
+
+.questionnaireFooterPrev{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100%;
+    width:50%;
+}
+
+.questionnaireFooterNext{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100%;
+    width:50%;
+}
+
+.btn.btn-primary{
+    width:200px;
+    border: solid thin black;
+    border-radius:50px;
+    background: #000;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn.btn-primary:hover {
+    background-color: #FFC107;
+    border: solid thin #FFC107;
+    color: black;
+}
