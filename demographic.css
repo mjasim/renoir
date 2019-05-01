@@ -64,3 +64,7 @@
     border: solid thin #FFC107;
     color: black;
 }
+
+.invalidFeedback{
+    color:crimson;
+}

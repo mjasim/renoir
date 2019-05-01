@@ -1,0 +1,55 @@
+.exitParent{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-end;
+    height:100%;
+    width:100%;
+}
+
+#exitVideo {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index:-5;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    height: 100%;
+    width: 30%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #exitBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    margin-top:10px;
+    border: solid thin black;
+    border-radius:50px;
+    background: #000;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  #exitBtn:hover {
+    background: #FFC107;
+    border: solid thin #FFC107;
+    color: black;
+  }
+
+  #finalComment{
+    visibility: hidden;
+  }

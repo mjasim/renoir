@@ -14,3 +14,5 @@ function vidButtonFunction() {
     btn.innerHTML = "Play";
   }
 }
+
+localStorage.clear()

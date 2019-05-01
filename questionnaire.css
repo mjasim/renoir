@@ -12,6 +12,10 @@
     width:80%;
 }
 
+.invalidFeedback{
+    color:crimson;
+}
+
 .questionnaireInfoBar{
     display:flex;
     flex-direction:row;
@@ -19,7 +23,7 @@
     align-items: center;
     background-color: #E9ECEF; 
     margin-top: 10px; 
-    margin-bottom:30px; 
+    margin-bottom:50px; 
     border:solid thin #E9ECEF; 
     border-radius:50px;
     width:80%;

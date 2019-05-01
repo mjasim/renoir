@@ -23,14 +23,14 @@
 
 	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
-	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="exit.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
 		<a class="navbar-brand" href="home.html">Color of Emotions</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
 				<li class="nav-item active">
 				<li><button class="btn btn-primary navbar-btn" id="about_button" type="button" data-toggle="modal"
 						data-placement="bottom" title="About" data-target="#aboutModal"
-						style="background-color:#343A40; border-color: #343A40">About</button></li>
+						style="background-color:black; border-color: black">About</button></li>
 				</li>
 			</ul>
 		</div>
@@ -62,20 +62,39 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- Modal body text goes here. -->
 					<p></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" style="background-color:#343A40" data-dismiss="modal" >Close</button>
+					<button type="button" class="btn btn-secondary" style="background-color:black" data-dismiss="modal" >Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="exitParent" id="exit_parent">
+	<div class="exitParent" id="exit_parent"> 
 
+	</div> -->
+
+	<!-- The video -->
+	<video autoplay muted loop id="exitVideo">
+		<source src="ss.mp4" type="video/mp4">
+	</video>
+
+	<div class="exitParent" id="exit_parent">
+		<div class="content">
+			<h1>Color of Emotions</h1>
+			<p>Thank You for Participating</p>
+			<!-- Use a button to pause/play the video with JavaScript -->
+			<input type="text" id="commentBox" size="50px">
+			<button id="exitBtn">Comment</button>
+			<h5 id="finalComment">Comment saved. You can close the window.<h5>
+		</div>
 	</div>
 
 </body>
 
 </html>
+
+<script src="interaction_log.php"></script>>
+<script src="interaction_log.js"></script>>
+<script src="exit.js"></script>

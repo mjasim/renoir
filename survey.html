@@ -73,9 +73,11 @@
 
 	<div class="surveyParent" id="survey_parent">
 		<div class="surveyInfoBar" id="survey_info_bar">
-			<span class="infoIcon"><i class="fas fa-info-circle"
-					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Please select an emotion box. Then
-			choose a color you associate with that emotion. Proceed after you have set color for all emotions.
+			<span class="infoIcon"><i class="fas fa-info-circle fa-lg"
+					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Drag and drop any color on any emotion box. Any color you selected previously will be marked when
+			you select the associated emotion. Proceed after you have set colors for all emotions.
+		</div>
+		<div class="surveyAlertBar" id="survey_alert_bar">
 		</div>
 		<div class="surveyContainer" id="survey_container">
 			<div class="surveyNameBar" id="survey_name_bar">
@@ -97,24 +99,19 @@
 			</div>
 			<div class="surveyEmo" id="survey_emo">
 				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%"
-						style="fill:#E9ECEF;" />
+					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%" />
 				</svg>
 				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%"
-						style="fill:#E9ECEF;" />
+					<rect class="emoBox" id="emoboxhappy" rx="1" ry="1" width="100%" height="100%" />
 				</svg>
 				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%"
-						style="fill:#E9ECEF;"/>
+					<rect class="emoBox" id="emoboxneutral" rx="1" ry="1" width="100%" height="100%" />
 				</svg>
 				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%"
-						style="fill:#E9ECEF;"/>
+					<rect class="emoBox" id="emoboxconcerned" rx="1" ry="1" width="100%" height="100%" />
 				</svg>
 				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%"
-						style="fill:#E9ECEF;">
+					<rect class="emoBox" id="emoboxangry" rx="1" ry="1" width="100%" height="100%" />
 				</svg>
 			</div>
 			<div class="surveyColor" id="survey_color">
@@ -126,8 +123,10 @@
 					Demographic</button>
 			</div>
 			<div class="surveyFooterNext" id="survey_footer_next">
-				<button class="btn btn-primary" type="button"
+				<!-- <button class="btn btn-primary" type="button"
 					onclick="window.open('questionnaire.html','_self')">Proceed to
+					Questionnaire</button> -->
+				<button class="btn btn-primary" type="button">Proceed to
 					Questionnaire</button>
 			</div>
 		</div>
@@ -137,4 +136,5 @@
 
 </html>
 
+<script src="demographic.js"></script>
 <script src="survey.js"></script>

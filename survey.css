@@ -23,13 +23,22 @@
     border:solid thin #E9ECEF; 
     border-radius:50px;
     width:80%;
-    height:5%;
+    height:10%;
 }
 
-.square{
-    width:5%;
-    background-color:#E9ECEF; 
-    margin:10px;
+.surveyAlertBar{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #E9ECEF; 
+    margin-top: 10px; 
+    /* margin-bottom:20px;  */
+    border:solid thin #E9ECEF; 
+    border-radius:50px;
+    width:80%;
+    height:5%;
+    visibility: hidden;
 }
 
 .surveyNameBar{
@@ -63,8 +72,8 @@
 .emoBox{
     transition:0.2s;
     cursor:pointer;
-    /* stroke:black;
-    stroke-width:1; */
+    stroke:black;
+    stroke-width:0;
 }
 
 .emoBox:hover{

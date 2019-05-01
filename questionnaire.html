@@ -75,78 +75,72 @@
 
 	<div class="questionnaireParent" id="questionnaire_parent">
 		<div class="questionnaireInfoBar" id="questionnaire_info_bar">
-			<span class="infoIcon"><i class="fas fa-info-circle"
+			<span class="infoIcon"><i class="fas fa-info-circle fa-lg"
 					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Please answer the folllowing questions.
 		</div>
 		<div class="questionnaireContainer" id="questionnaire_container">
 			<form class="needs-validation" novalidate>
 
 				<div class="form-group row">
-					<label for="cultureSelect" class="col-sm-12 col-form-label">What is you cultural preference?</label>
-					<div class="col-sm-12">
+					<label for="cultureSelect" class="col-lg-5 col-m-5 col-sm-12 col-form-label">What is you cultural preference?</label>
+					<div class="col-lg-7 col-m-7 col-sm-12">
 						<select class="form-control" id="cultureSelect" required>
 							<option value="">Please select your cultural preference</option>
-							<option value="n">My native culture</option>
-							<option value="w">Western culture</option>
-							<option value="o">Other</option>
-							<option value="NA">I prefer not to say</option>
+							<option>My native culture</option>
+							<option>Western culture</option>
+							<option>Other</option>
+							<option>I prefer not to say</option>
 						</select>
-						<div class="invalid-feedback">
-							Please Select your cultural preference.
+						<div class="invalidfeedback" id="cultureFeedback">
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group row">
-					<label for="inputExcite" class="col-sm-12 col-form-label">Why did you associate emotion "Excited"
-						with color <i class="fas fa-circle fa-lg" style="color:orange"></i> ?
+					<label for="inputExcited" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate emotion "Excited"
+						with color <i class="fas fa-square-full fa-2x" id="excitedIcon"></i> ?
 						</label>
-					<div class="col-sm-12">
-						<input type="email" class="form-control" id="inputExcite" placeholder="" required>
-						<div class="invalid-feedback">
-							Please provide an answer.
+					<div class="col-lg-7 col-m-7 col-sm-12">
+						<input type="text" class="form-control" id="inputExcited" placeholder="" required>
+						<div class="invalidfeedback" id="excitedFeedback">
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputHappy" class="col-sm-12 col-form-label">Why did you associate emotion "Happy" with
-						color <i class="fas fa-circle fa-lg" style="color:yellow"></i> ? </label>
-					<div class="col-sm-12">
+					<label for="inputHappy" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate emotion "Happy" with
+						color <i class="fas fa-square-full fa-2x" id="happyIcon"></i> ? </label>
+					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputHappy" placeholder="" required>
-						<div class="invalid-feedback">
-							Please provide an answer.
+						<div class="invalidfeedback" id="happyFeedback">
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputNeutral" class="col-sm-12 col-form-label">Why did you associate emotion "Neutral"
-						with color <i class="fas fa-circle fa-lg" style="color:Blue"></i> ?
+					<label for="inputNeutral" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate emotion "Neutral"
+						with color <i class="fas fa-square-full fa-2x" id="neutralIcon"></i> ?
 					</label></label>
-					<div class="col-sm-12">
+					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputNeutral" placeholder="" required>
-						<div class="invalid-feedback">
-							Please provide an answer.
+						<div class="invalidfeedback" id="neutralFeedback">
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputConcerned" class="col-sm-12 col-form-label">Why did you associate emotion "Concerned" with
-						color <i class="fas fa-circle fa-lg" style="color:green"></i> ? </label>
-					<div class="col-sm-12">
+					<label for="inputConcerned" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate emotion "Concerned" with
+						color <i class="fas fa-square-full fa-2x" id="concernedIcon"></i> ? </label>
+					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputConcerned" placeholder="" required>
-						<div class="invalid-feedback">
-							Please provide an answer.
+						<div class="invalidfeedback" id="concernedFeedback">
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputAngry" class="col-sm-12 col-form-label">Why did you associate emotion "Angry"
-						with color <i class="fas fa-circle fa-lg" style="color:purple"></i> ?
+					<label for="inputAngry" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate emotion "Angry"
+						with color <i class="fas fa-square-full fa-2x" id="angryIcon"></i> ?
 					</label></label>
-					<div class="col-sm-12">
+					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputAngry" placeholder="" required>
-						<div class="invalid-feedback">
-							Please provide an answer.
+						<div class="invalidfeedback" id="angryFeedback">
 						</div>
 					</div>
 				</div>
@@ -159,8 +153,9 @@
 					Colors</button>
 			</div>
 			<div class="questionnaireFooterNext" id="questionnaire_footer_next">
-				<button class="btn btn-primary" type="button" onclick="window.open('final.html','_self')">Proceed to
-					Finish</button>
+				<!-- <button class="btn btn-primary" type="button" onclick="window.open('final.html','_self')">Proceed to
+					Finish</button> -->
+					<button class="btn btn-primary" type="button">Proceed to Finish</button>
 			</div>
 		</div>
 	</div>
@@ -169,3 +164,6 @@
 </body>
 
 </html>
+
+<!-- <script src="survey.js"></script> -->
+<script src="questionnaire.js"></script>
