@@ -20,6 +20,6 @@ $(document).ready(function () {
         console.log(str);
         logInteraction(str);
 
-        //localStorage.clear();
+        localStorage.clear();
     });
 });
