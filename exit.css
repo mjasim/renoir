@@ -15,6 +15,14 @@
     min-height: 100%;
     z-index:-5;
   }
+
+  .tarea{
+    margin-top: 10px; 
+    /* margin-bottom:20px;  */
+    border:solid thick #E9ECEF; 
+    width:90%;
+    height:20%;
+}
   
   /* Add some content at the bottom of the video/page */
   .content {

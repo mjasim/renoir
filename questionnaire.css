@@ -33,7 +33,16 @@
 .questionnaireFooterButtons{
     display:flex;
     flex-direction:row;
-    height:10%;
+    height:7%;
+    width:80%;
+}
+
+.questionnaireFooterIcons{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    height:3%;
     width:80%;
 }
 

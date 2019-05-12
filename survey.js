@@ -12,24 +12,25 @@ emo = {
     emoboxangry: "Angry"
 }
 
-populate_emo();
 populate_color();
+populate_emo();
 
 function fill_color(divColorHTML, shades, i) {
     for (var j in shades) {
-        divColorHTML = divColorHTML + '<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">' + '<rect class="colorBox" rx="1" ry="1" width="100%" height="100%"' + 'id=color_' + i + "_" + j + ' style="fill:' + shades[j] + '"\/>' + '</svg>'
+        divColorHTML = divColorHTML + '<div class="square_color" ' + 'id=color_' + i + "_" + j + ' style="background-color:' + shades[j] + '"\/>' + '</div>'
     }
     return divColorHTML;
 }
 
-function populate_emo(){
-    for (var i = 0; i < all_emo.length; i++){
+function populate_emo() {
+    for (var i = 0; i < all_emo.length; i++) {
         emotionColor = localStorage.getItem(emo[all_emo[i]].toLowerCase())
-        if(emotionColor === null){
-            document.getElementById(all_emo[i]).setAttribute("style", "fill:#E9ECEF")
+        // console.log(emotionColor)
+        if (emotionColor === null) {
+            document.getElementById(all_emo[i]).setAttribute("style", "background-color:#E9ECEF")
         }
-        else{
-            document.getElementById(all_emo[i]).setAttribute("style", "fill:" + emotionColor)
+        else {
+            document.getElementById(all_emo[i]).setAttribute("style", "background-color:" + emotionColor)
         }
     }
 }
@@ -61,8 +62,8 @@ function populate_color() {
         else if (colors[i] == "gray")
             shades = gray;
 
-        var divColorHTML = "<div class=\"color_body" + colors[i] + "\">";
-        divColor.innerHTML = divColorHTML + fill_color(divColorHTML, shades, i);
+        var divColorHTML = "";
+        divColor.innerHTML = fill_color(divColorHTML, shades, i);
         var element = document.getElementById("survey_color");
         element.appendChild(divColor);
     }
@@ -72,9 +73,9 @@ function tagColor(current_fill) {
     for (var i in colors) {
         for (var j in shades) {
             var id = "color_" + i + "_" + j;
-            var this_fill = document.getElementById(id).getAttribute("style").slice(0, 12);
+            var this_fill = document.getElementById(id).getAttribute("style").slice(0, 24);
             if (this_fill == current_fill) {
-                document.getElementById(id).setAttribute("style", this_fill + "; stroke:black; stroke-width:5;")
+                document.getElementById(id).setAttribute("style", this_fill + "; outline:dashed thick black;")
             }
             else {
                 document.getElementById(id).setAttribute("style", this_fill)
@@ -88,8 +89,9 @@ function tagColor(current_fill) {
 function check_missing() {
     var empty = [];
     for (var i = 0; i < all_emo.length; i++) {
-        var current_fill = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 12);
-        if (current_fill == "fill:#E9ECEF") {
+        var current_fill = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 24);
+        console.log(current_fill)
+        if (current_fill == "background-color:#E9ECEF") {
             empty.push(all_emo[i])
         }
     }
@@ -103,7 +105,7 @@ function check_missing() {
         log = log.slice(0, -2);
         console.log(log);
         document.getElementById("survey_alert_bar").setAttribute("style", "visibility:visible");
-        document.getElementById("survey_alert_bar").innerHTML = '<span class="infoIcon" style="color:crimson;"><i class="fas fa-exclamation-circle fa-lg" style="margin-left:10px;">&nbsp;&nbsp;</i>' + log + '</span>';
+        document.getElementById("survey_alert_bar").innerHTML = '<span class="pingIcon"><i class="fas fa-exclamation-circle fa-lg" style="color:crimson;margin-left:10px;">&nbsp;&nbsp;</i>' + log + '</span>';
         return true
     }
     else {
@@ -114,9 +116,9 @@ function check_missing() {
 function check_duplicate() {
     var box = [];
     for (var i = 0; i < all_emo.length; i++) {
-        var x = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 12)
+        var x = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 24)
         for (var j = i; j < all_emo.length; j++) {
-            var y = document.getElementById(all_emo[j]).getAttribute("style").slice(0, 12)
+            var y = document.getElementById(all_emo[j]).getAttribute("style").slice(0, 24)
             if (x == y && all_emo[i] != all_emo[j]) {
                 box.push(emo[all_emo[i]])
                 box.push(emo[all_emo[j]])
@@ -135,7 +137,7 @@ function check_duplicate() {
         log = log.slice(0, -2);
         console.log(log);
         document.getElementById("survey_alert_bar").setAttribute("style", "visibility:visible");
-        document.getElementById("survey_alert_bar").innerHTML = '<span class="infoIcon"><i class="fas fa-info-circle fa-lg" style="color:black;margin-left:10px;">&nbsp;&nbsp;</i></span>' + log;
+        document.getElementById("survey_alert_bar").innerHTML = '<span class="pingIcon"><i class="fas fa-exclamation-circle fa-lg" style="color:crimson;margin-left:10px;">&nbsp;&nbsp;</i></span>' + log;
         return true
     }
     else {
@@ -145,30 +147,41 @@ function check_duplicate() {
 
 
 $(document).ready(function () {
-    $('.emobox').click(function () {
+    $('.square_emo').click(function () {
         id = $(this).attr('id')
         selected_emo = id;
 
         for (var i = 0; i < all_emo.length; i++) {
-            var current_fill = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 12);
+            var current_fill = document.getElementById(all_emo[i]).getAttribute("style").slice(0, 24);
+            console.log(current_fill)
             document.getElementById(all_emo[i]).setAttribute("style", current_fill);
         }
 
-        var current_fill = document.getElementById(selected_emo).getAttribute("style").slice(0, 12);
-        document.getElementById(selected_emo).setAttribute("style", current_fill + "; stroke:black; stroke-width:5;");
+        var current_fill = document.getElementById(selected_emo).getAttribute("style").slice(0, 24);
+        document.getElementById(selected_emo).setAttribute("style", current_fill + "; outline:solid thick black;");
 
         tagColor(current_fill);
     });
 });
 
+last_color = ""
+
 $(document).ready(function () {
-    $('.colorBox').click(function () {
+    $('.square_color').click(function () {
         id = $(this).attr('id')
         selected_color = id;
 
-        new_color = document.getElementById(selected_color).getAttribute("style").slice(0, 12);
+        new_color = document.getElementById(selected_color).getAttribute("style").slice(0, 24);
 
-        document.getElementById(selected_emo).setAttribute("style", new_color + ";stroke:black; stroke-width:5;");
+        document.getElementById(selected_emo).setAttribute("style", new_color + "; outline:solid thick black;");
+
+        if (last_color) {
+            temp_color = document.getElementById(last_color).getAttribute("style").slice(0, 24);
+            document.getElementById(last_color).setAttribute("style", temp_color + "; outline:none");
+        }
+
+        document.getElementById(selected_color).setAttribute("style", new_color + "; outline:solid thick black");
+        last_color = selected_color;
     });
 });
 
@@ -178,13 +191,15 @@ $(document).ready(function () {
         if (!check_missing()) {
             if (!check_duplicate()) {
                 console.log("all clear")
-                localStorage.setItem("excited", document.getElementById("emoboxexcited").getAttribute("style").slice(5, 12));
-                localStorage.setItem("happy", document.getElementById("emoboxhappy").getAttribute("style").slice(5, 12))
-                localStorage.setItem("neutral", document.getElementById("emoboxneutral").getAttribute("style").slice(5, 12))
-                localStorage.setItem("concerned", document.getElementById("emoboxconcerned").getAttribute("style").slice(5, 12))
-                localStorage.setItem("angry", document.getElementById("emoboxangry").getAttribute("style").slice(5, 12))
+                localStorage.setItem("excited", document.getElementById("emoboxexcited").getAttribute("style").slice(17, 24));
+                localStorage.setItem("happy", document.getElementById("emoboxhappy").getAttribute("style").slice(17, 24))
+                localStorage.setItem("neutral", document.getElementById("emoboxneutral").getAttribute("style").slice(17, 24))
+                localStorage.setItem("concerned", document.getElementById("emoboxconcerned").getAttribute("style").slice(17, 24))
+                localStorage.setItem("angry", document.getElementById("emoboxangry").getAttribute("style").slice(17, 24))
+                value = $("#colorCommentBox").val();
+                localStorage.setItem("color_comment", value)
                 console.log(localStorage)
-                window.open('questionnaire.html','_self')
+                window.open('questionnaire.html', '_self')
             }
         }
         else {

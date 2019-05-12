@@ -73,48 +73,51 @@
 
 	<div class="surveyParent" id="survey_parent">
 		<div class="surveyInfoBar" id="survey_info_bar">
-			<span class="infoIcon"><i class="fas fa-info-circle fa-lg"
-					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Drag and drop any color on any emotion box. Any color you selected previously will be marked when
-			you select the associated emotion. Proceed after you have set colors for all emotions.
+			<span class="infoIcon" style="text-align:justify"><i class="fas fa-info-circle fa-lg"
+					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Select an emotion box. Then select the
+			color you want to associate with that emotion.
+			Your previously selected color will be shown with a dashed border and current selection will be shown with a
+			solid border.
+			Proceed after you have selected colors for all emotions.
 		</div>
 		<div class="surveyAlertBar" id="survey_alert_bar">
 		</div>
 		<div class="surveyContainer" id="survey_container">
 			<div class="surveyNameBar" id="survey_name_bar">
-				<div style="width:20%;text-align:center">
+				<div class="emoNames" style="text-align:center">
 					<a>Excited</a>
 				</div>
-				<div style="width:20%;text-align:center">
+				<div class="emoNames" style="text-align:center">
 					<a>Happy</a>
 				</div>
-				<div style="width:20%;text-align:center">
+				<div class="emoNames" style="text-align:center">
 					<a>Neutral</a>
 				</div>
-				<div style="width:20%;text-align:center">
+				<div class="emoNames" style="text-align:center">
 					<a>Concerned</a>
 				</div>
-				<div style="width:20%;text-align:center">
+				<div class="emoNames" style="text-align:center">
 					<a>Angry</a>
 				</div>
 			</div>
+
 			<div class="surveyEmo" id="survey_emo">
-				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxexcited" rx="1" ry="1" width="100%" height="100%" />
-				</svg>
-				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxhappy" rx="1" ry="1" width="100%" height="100%" />
-				</svg>
-				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxneutral" rx="1" ry="1" width="100%" height="100%" />
-				</svg>
-				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxconcerned" rx="1" ry="1" width="100%" height="100%" />
-				</svg>
-				<svg width="20%" height="100%" viewBox="0 0 100 100" style="padding-bottom:10px">
-					<rect class="emoBox" id="emoboxangry" rx="1" ry="1" width="100%" height="100%" />
-				</svg>
+				<div class=square_emo id="emoboxexcited" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxhappy" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxneutral" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxconcerned" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxangry" style="padding-bottom:20px"></div>
 			</div>
 			<div class="surveyColor" id="survey_color">
+			</div>
+			<div class="surveyInput" id="survey_input">
+				<div class="surveyInfoBarRight" id="survey_info_bar">
+					<span class="infoIcon" style="margin:5px; text-align:justify"><i class="fas fa-info-circle fa-lg"
+							style="color:black;margin:5px">&nbsp;</i> The color options are chosen based on the Munsel
+						Color Chart and Google's Material Design Color Chart.
+						If you have any comment regarding the colors, please insert it in the textbox below.</span>
+				</div>
+				<textarea class="tarea" id="colorCommentBox" placeholder="Please write your comment here..."></textarea>
 			</div>
 		</div>
 		<div class="surveyFooterButtons" id="survey_footer_buttons">
@@ -129,6 +132,13 @@
 				<button class="btn btn-primary" type="button">Proceed to
 					Questionnaire</button>
 			</div>
+		</div>
+		<div class="surveyFooterIcons" id="survey_footer_icons">
+			<span>
+				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+				<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i></span>
+			</span>
 		</div>
 	</div>
 
