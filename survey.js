@@ -106,6 +106,8 @@ function check_missing() {
         console.log(log);
         document.getElementById("survey_alert_bar").setAttribute("style", "visibility:visible");
         document.getElementById("survey_alert_bar").innerHTML = '<span class="pingIcon"><i class="fas fa-exclamation-circle fa-lg" style="color:crimson;margin-left:10px;">&nbsp;&nbsp;</i>' + log + '</span>';
+        str = "missing"
+        logInteraction(str)
         return true
     }
     else {
@@ -138,6 +140,8 @@ function check_duplicate() {
         console.log(log);
         document.getElementById("survey_alert_bar").setAttribute("style", "visibility:visible");
         document.getElementById("survey_alert_bar").innerHTML = '<span class="pingIcon"><i class="fas fa-exclamation-circle fa-lg" style="color:crimson;margin-left:10px;">&nbsp;&nbsp;</i></span>' + log;
+        str = "duplicate"
+        logInteraction(str)
         return true
     }
     else {
@@ -161,6 +165,9 @@ $(document).ready(function () {
         document.getElementById(selected_emo).setAttribute("style", current_fill + "; outline:solid thick black;");
 
         tagColor(current_fill);
+
+        str = "emo" + "," + selected_emo;
+        logInteraction(str)
     });
 });
 
@@ -182,6 +189,9 @@ $(document).ready(function () {
 
         document.getElementById(selected_color).setAttribute("style", new_color + "; outline:solid thick black");
         last_color = selected_color;
+
+        str = "color" + "," + selected_color;
+        logInteraction(str)
     });
 });
 

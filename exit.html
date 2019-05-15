@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 
 <head>
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -30,60 +31,45 @@
 </head>
 
 <body>
-	<!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
-		<a class="navbar-brand" href="home.html">Color of Emotions</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-			</ul>
-		</div>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-				<li><button class="btn btn-primary navbar-btn" id="about_button" type="button" data-toggle="modal"
-						data-placement="bottom" title="About" data-target="#aboutModal"
-						style="background-color:black; border-color: black">About</button></li>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-	<div class="modal fade" tabindex="-1" role="dialog" id="aboutModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">About</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+	<div class="exitParent" id="exit_parent">
+		<div class="statParent" id="stat_parent">
+			<div class="hitCount" id="hit_count">
+				<p>Number of People Surveyed:<br></p>
+				<h1 id="count" style="font-size:5em"></h1>
+			</div>
+			<div class="statColors" id="stat_colors">
+				<div class="aggNameBar" id="agg_name_bar">
+					<div class="emoNames" style="text-align:center">
+						<a>Excited</a>
+					</div>
+					<div class="emoNames" style="text-align:center">
+						<a>Happy</a>
+					</div>
+					<div class="emoNames" style="text-align:center">
+						<a>Neutral</a>
+					</div>
+					<div class="emoNames" style="text-align:center">
+						<a>Concerned</a>
+					</div>
+					<div class="emoNames" style="text-align:center">
+						<a>Angry</a>
+					</div>
 				</div>
-				<div class="modal-body">
-					<p></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" style="background-color:black" data-dismiss="modal" >Close</button>
+				<div class="aggEmo" id="agg_emo">
+					<div class=square_emo id="emoboxexcited" style="padding-bottom:20px"></div>
+					<div class=square_emo id="emoboxhappy" style="padding-bottom:20px"></div>
+					<div class=square_emo id="emoboxneutral" style="padding-bottom:20px"></div>
+					<div class=square_emo id="emoboxconcerned" style="padding-bottom:20px"></div>
+					<div class=square_emo id="emoboxangry" style="padding-bottom:20px"></div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="exitParent" id="exit_parent"> 
-
-	</div> -->
-
-	<!-- The video -->
-	<video autoplay muted loop id="exitVideo">
-		<source src="ss.mp4" type="video/mp4">
-	</video>
-
-	<div class="exitParent" id="exit_parent">
 		<div class="content">
-			<h1>Color of Emotions</h1>
-			<p>Thank You for Participating in the survey. If you have any commments about the survey or your experience, please insert
+			<h1 style="text-align: center">Color of Emotions</h1>
+			<p style="text-align: center">Thank You for Participating in the survey. If you have any commments about the
+				survey or your
+				experience, please insert
 				those in the textbox below.
 			</p>
 			<!-- Use a button to pause/play the video with JavaScript -->
@@ -91,12 +77,16 @@
 			<button id="exitBtn">Comment</button>
 			<h5 id="finalComment" style="text-align: center">Thank you. Your comment is saved.<h5>
 		</div>
+
 	</div>
 
 </body>
 
 </html>
 
-<script src="interaction_log.php"></script>>
-<script src="interaction_log.js"></script>>
+
+<script src="data_log.php"></script>
+<script src="data_log.js"></script>
+<script src="interaction_log.php"></script>
+<script src="interaction_log.js"></script>
 <script src="exit.js"></script>

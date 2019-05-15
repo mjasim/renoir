@@ -1,5 +1,5 @@
 var userID;
-var recordInteractions = true;//if true interaction data will be saved
+var recordInteractions =true;//if true interaction data will be saved
 if (localStorage.getItem("userID_renoir") === null) {
     userID = makeRandomId()
     localStorage.setItem('userID_renoir', userID);
@@ -8,16 +8,15 @@ else{
     userID = localStorage.getItem('userID_renoir');
 }
 console.log('user ID', userID);
-
-function logInteraction(str)
+function logData(str)
 {
-    if(recordInteractions == true){
+    if(recordInteractions==true){
         var dt = new Date();
         var utcDate = dt.toUTCString();
-        str = userID + "," + utcDate + "," + str + '\n';
+        str = userID + ","+utcDate+',' + str+'\n';
 
         request= new XMLHttpRequest();
-        request.open("POST", "interaction_log.php?q=" + userID, true);
+        request.open("POST", "data_log.php?q=" +userID, true);
         //request.setRequestHeader("Content-type", "application/json");
         request.send(str);
     }
