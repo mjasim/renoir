@@ -1,6 +1,6 @@
 <?php
  $str_json = file_get_contents('php://input');
- $fp = fopen('stat.json', 'w');
- fwrite($fp,$save_data);
+ $fp = fopen('stat_stack.json', 'w');
+ fwrite($fp,$str_json);
  fclose($fp);
 ?>

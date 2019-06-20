@@ -1,0 +1,162 @@
+<html>
+<meta charset="utf-8">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- <script src="interaction_log.js"></script> -->
+
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" href="survey_concern.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
+		<a class="navbar-brand" href="index.html">Color of Emotions</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			</ul>
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+				<li><button class="btn btn-primary navbar-btn" id="about_button" type="button" data-toggle="modal"
+						data-placement="bottom" title="About" data-target="#aboutModal">About</button></li>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="aboutModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">About</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Welcome to the color of emotion survey. Emotions are a crucial component of human communication
+						that helps people to express their feelings. However, in online text-based discussions, this
+						indicator is missing, which leads to an incomplete understanding of the discussions. Research
+						shows an association between emotions and colors. We posit colors can help express emotions
+						captured from text data when used appropriately in visualization. In this survey, we want to
+						learn how you associate colors with different emotions. Our goal is to identify a representative
+						color palette to visualize emotions from online discussion text. The survey will take about 10
+						minutes. Thank you for participating in the survey.<br>
+						<a href="Approval.pdf">This study was reviewed and approved by the University of Massachusets
+							Amherst Institutional Review Board</a>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="surveyParent" id="survey_parent">
+		<div class="surveyInfoBar" id="survey_info_bar">
+			<h1>Color Selection for Emotions (6/7) - Concern</h1>
+			<p style="font-weight: 500"> The goal of this survey is to learn what colors you associate with seven
+				different emotions - Excitement, Happiness,
+				Acceptance, Neutral, Disapproval, <b>Concern</b> and Anger. Please select the color you associate with
+				<b>Concern</b>.<p>
+		</div>
+		<div class="header" id="emoboxconcerned">
+			<h4>Select the color you associate with <b>Concern</b></h4>
+		</div>
+		<div class="surveyAlertBar" id="survey_alert_bar">
+		</div>
+		<div class="surveyContainer" id="survey_container">
+			<!-- <div class="surveyNameBar" id="survey_name_bar">
+				<div class="emoNames" style="text-align:center">
+					<a>Excited</a>
+				</div>
+				<div class="emoNames" style="text-align:center">
+					<a>Happy</a>
+				</div>
+				<div class="emoNames" style="text-align:center">
+					<a>Neutral</a>
+				</div>
+				<div class="emoNames" style="text-align:center">
+					<a>Concerned</a>
+				</div>
+				<div class="emoNames" style="text-align:center">
+					<a>Angry</a>
+				</div>
+			</div> -->
+
+			<!-- <div class="surveyEmo" id="survey_emo">
+				<div class=square_emo id="emoboxexcited" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxhappy" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxneutral" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxconcerned" style="padding-bottom:20px"></div>
+				<div class=square_emo id="emoboxangry" style="padding-bottom:20px"></div>
+			</div> -->
+			<div class="surveyColor" id="survey_color">
+			</div>
+		</div>
+		<div class="surveyfooter">
+			<div class="surveyFooterButtons" id="survey_footer_buttons">
+				<div class="surveyFooterPrev" id="survey_footer_prev">
+					<button class="btn btn-primary" type="button"
+						onclick="window.open('survey_disapproval.html','_self')">Back</button>
+				</div>
+				<!-- <div class="surveyFooterJump" id="survey_footer_jump">
+					<button class="btn btn-primary" type="button">Jump to Finalize</button>
+				</div> -->
+				<div class="surveyFooterNext" id="survey_footer_next">
+					<button class="btn btn-primary" type="button">Next</button>
+				</div>
+			</div>
+			<div class="surveyFooterIcons" id="survey_footer_icons">
+				<span>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+				</span>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
+
+<script src="demographic.js"></script>
+<script src="interaction_log.php"></script>
+<script src="interaction_log.js"></script>
+<script src="survey_concern.js"></script>

@@ -62,11 +62,20 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- Modal body text goes here. -->
-					<p></p>
+					<p>Welcome to the color of emotion survey. Emotions are a crucial component of human communication
+						that helps people to express their feelings. However, in online text-based discussions, this
+						indicator is missing, which leads to an incomplete understanding of the discussions. Research
+						shows an association between emotions and colors. We posit colors can help express emotions
+						captured from text data when used appropriately in visualization. In this survey, we want to
+						learn how you associate colors with different emotions. Our goal is to identify a representative
+						color palette to visualize emotions from online discussion text. The survey will take about 10
+						minutes. Thank you for participating in the survey.<br>
+						<a href="Approval.pdf">This study was reviewed and approved by the University of Massachusets
+							Amherst Institutional Review Board</a>
+					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" style="background-color:black"
+					<button type="button" class="btn btn-primary" style="background-color:black"
 						data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -75,13 +84,15 @@
 
 	<div class="questionnaireParent" id="questionnaire_parent">
 		<div class="questionnaireInfoBar" id="questionnaire_info_bar">
-			<span class="infoIcon"><i class="fas fa-info-circle fa-lg"
-					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Please answer the folllowing questions.
+			<h1>Questionnaire</h1>
+			<p style="font-weight: 500">Please help us to better understand your choice of colors that you associate
+				with the seven emotions - Excitement, Happiness,
+				Acceptance, Neutral, Disapproval, Concern and Anger by answering the following questions.
 		</div>
 		<div class="questionnaireContainer" id="questionnaire_container">
 			<form class="needs-validation" novalidate>
 
-				<div class="form-group row">
+				<!-- <div class="form-group row">
 					<label for="cultureSelect" class="col-lg-5 col-m-5 col-sm-12 col-form-label">What is you cultural
 						preference?</label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
@@ -95,12 +106,12 @@
 						<div class="invalidfeedback" id="cultureFeedback">
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="form-group row">
 					<label for="inputExcited" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
-						emotion "Excited"
-						with color <i class="fas fa-square-full fa-2x" id="excitedIcon"></i> ?
+						emotion - <b>Excitement</b>
+						with color &nbsp; <i class="fas fa-square-full fa-2x" id="excitedIcon"></i> ?
 					</label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputExcited" placeholder="" required>
@@ -110,8 +121,8 @@
 				</div>
 				<div class="form-group row">
 					<label for="inputHappy" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
-						emotion "Happy" with
-						color <i class="fas fa-square-full fa-2x" id="happyIcon"></i> ? </label>
+						emotion - <b>Happiness</b> with
+						color &nbsp; <i class="fas fa-square-full fa-2x" id="happyIcon"></i> ? </label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputHappy" placeholder="" required>
 						<div class="invalidfeedback" id="happyFeedback">
@@ -119,9 +130,19 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label for="inputAccept" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
+						emotion - <b>Acceptance</b> with
+						color &nbsp; <i class="fas fa-square-full fa-2x" id="acceptIcon"></i> ? </label>
+					<div class="col-lg-7 col-m-7 col-sm-12">
+						<input type="text" class="form-control" id="inputAccept" placeholder="" required>
+						<div class="invalidfeedback" id="acceptFeedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
 					<label for="inputNeutral" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
-						emotion "Neutral"
-						with color <i class="fas fa-square-full fa-2x" id="neutralIcon"></i> ?
+						emotion - <b>Neutral</b>
+						with color &nbsp; <i class="fas fa-square-full fa-2x" id="neutralIcon"></i> ?
 					</label></label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputNeutral" placeholder="" required>
@@ -130,9 +151,19 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label for="inputDisapprove" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
+						emotion - <b>Disapprove</b> with
+						color &nbsp; <i class="fas fa-square-full fa-2x" id="disapproveIcon"></i> ? </label>
+					<div class="col-lg-7 col-m-7 col-sm-12">
+						<input type="text" class="form-control" id="inputDisapprove" placeholder="" required>
+						<div class="invalidfeedback" id="disapproveFeedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
 					<label for="inputConcerned" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
-						emotion "Concerned" with
-						color <i class="fas fa-square-full fa-2x" id="concernedIcon"></i> ? </label>
+						emotion - <b>Concern</b> with
+						color &nbsp; <i class="fas fa-square-full fa-2x" id="concernedIcon"></i> ? </label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputConcerned" placeholder="" required>
 						<div class="invalidfeedback" id="concernedFeedback">
@@ -141,8 +172,8 @@
 				</div>
 				<div class="form-group row">
 					<label for="inputAngry" class="col-lg-5 col-m-5 col-sm-12 col-form-label">Why did you associate
-						emotion "Angry"
-						with color <i class="fas fa-square-full fa-2x" id="angryIcon"></i> ?
+						emotion - <b>Anger</b>
+						with color &nbsp; <i class="fas fa-square-full fa-2x" id="angryIcon"></i> ?
 					</label></label>
 					<div class="col-lg-7 col-m-7 col-sm-12">
 						<input type="text" class="form-control" id="inputAngry" placeholder="" required>
@@ -152,24 +183,33 @@
 				</div>
 
 			</form>
-		</div>
-		<div class="questionnaireFooterButtons" id="questionnaire_footer_buttons">
-			<div class="questionnaireFooterPrev" id="questionnaire_footer_prev">
-				<button class="btn btn-primary" type="button" onclick="window.open('survey.html','_self')">Back to
-					Colors</button>
+			<div class="questionnaireFooterButtons" id="questionnaire_footer_buttons">
+				<div class="questionnaireFooterPrev" id="questionnaire_footer_prev">
+					<button class="btn btn-primary" type="button"
+						onclick="window.open('survey_revision.html','_self')">Back</button>
+				</div>
+				<div class="questionnaireFooterNext" id="questionnaire_footer_next">
+					<!-- <button class="btn btn-primary" type="button" onclick="window.open('final.html','_self')">Proceed to
+						Finish</button> -->
+					<button class="btn btn-primary" type="button">Next</button>
+				</div>
 			</div>
-			<div class="questionnaireFooterNext" id="questionnaire_footer_next">
-				<!-- <button class="btn btn-primary" type="button" onclick="window.open('final.html','_self')">Proceed to
-					Finish</button> -->
-				<button class="btn btn-primary" type="button">Proceed to Finish</button>
+
+			<div class="questionnaireFooterIcons" id="questionnaire_footer_icons">
+				<span>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+				</span>
+				</span>
 			</div>
-		</div>
-		<div class="questionnaireFooterIcons" id="questionnaire_footer_icons">
-			<span>
-				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
-				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
-				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i></span>
-			</span>
 		</div>
 	</div>
 

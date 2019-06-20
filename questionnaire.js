@@ -5,11 +5,13 @@ var icon_colors = ["red", "blue", "green", "orange", "purple"];
 populate_icons();
 
 function populate_icons(){
-    document.getElementById("excitedIcon").setAttribute("style", "color:" + localStorage.getItem("excited"))
-    document.getElementById("happyIcon").setAttribute("style", "color:" + localStorage.getItem("happy"))
-    document.getElementById("neutralIcon").setAttribute("style", "color:" + localStorage.getItem("neutral"))
-    document.getElementById("concernedIcon").setAttribute("style", "color:" + localStorage.getItem("concerned"))
-    document.getElementById("angryIcon").setAttribute("style", "color:" + localStorage.getItem("angry"))
+    document.getElementById("excitedIcon").setAttribute("style", "color:" + localStorage.getItem("excited") + "; outline:solid thin black;")
+    document.getElementById("happyIcon").setAttribute("style", "color:" + localStorage.getItem("happy") + "; outline:solid thin black;")
+    document.getElementById("neutralIcon").setAttribute("style", "color:" + localStorage.getItem("neutral") + "; outline:solid thin black;")
+    document.getElementById("concernedIcon").setAttribute("style", "color:" + localStorage.getItem("concerned") + "; outline:solid thin black;")
+    document.getElementById("angryIcon").setAttribute("style", "color:" + localStorage.getItem("angry") + "; outline:solid thin black;")
+    document.getElementById("acceptIcon").setAttribute("style", "color:" + localStorage.getItem("accept") + "; outline:solid thin black;")
+    document.getElementById("disapproveIcon").setAttribute("style", "color:" + localStorage.getItem("disapprove") + "; outline:solid thin black;")
 }
 
 function validate_q(formId, feedbackId, feedbackMessage) {
@@ -31,12 +33,14 @@ $(document).ready(function () {
 
         x = parseInt(0);
 
-        localStorage.setItem("cultural_preference", validate_q("cultureSelect", "cultureFeedback", "Please input your cultural preference"));
+        // localStorage.setItem("cultural_preference", validate_q("cultureSelect", "cultureFeedback", "Please input your cultural preference"));
         localStorage.setItem("excited_reason", validate_q("inputExcited", "excitedFeedback", "Please input a response"));
         localStorage.setItem("happy_reason", validate_q("inputHappy", "happyFeedback", "Please input a response"));
         localStorage.setItem("neutral_reason", validate_q("inputNeutral", "neutralFeedback", "Please input a response"));
         localStorage.setItem("concerned_reason", validate_q("inputConcerned", "concernedFeedback", "Please input a response"));
         localStorage.setItem("angry_reason", validate_q("inputAngry", "angryFeedback", "Please input a response"));
+        localStorage.setItem("accept_reason", validate_q("inputAccept", "acceptFeedback", "Please input a response"));
+        localStorage.setItem("disapprove_reason", validate_q("inputDisapprove", "disapproveFeedback", "Please input a response"));
 
         console.log("x = ", x)
 
@@ -80,5 +84,17 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#inputAngry').change(function () {
         document.getElementById("angryFeedback").innerHTML = "";
+    });
+});
+
+$(document).ready(function () {
+    $('#inputAccept').change(function () {
+        document.getElementById("acceptFeedback").innerHTML = "";
+    });
+});
+
+$(document).ready(function () {
+    $('#inputDisapprove').change(function () {
+        document.getElementById("disapproveFeedback").innerHTML = "";
     });
 });

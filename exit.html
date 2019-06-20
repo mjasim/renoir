@@ -32,14 +32,22 @@
 
 <body>
 
+	<!-- The video -->
+	<!-- <video autoplay muted loop id="exitVideo">
+		<source src="outro.mp4" type="video/mp4">
+	</video> -->
+
 	<div class="exitParent" id="exit_parent">
 		<div class="statParent" id="stat_parent">
 			<div class="hitCount" id="hit_count">
-				<p>Number of People Surveyed:<br></p>
+				<p>People Surveyed:<br></p>
 				<h1 id="count" style="font-size:5em"></h1>
 			</div>
+			<div class="aggIntro" id="agg_intro" style="font-weight: bold; margin-bottom:30px">
+				<p id="aggnote"></p>
+			</div>
 			<div class="statColors" id="stat_colors">
-				<div class="aggNameBar" id="agg_name_bar">
+				<!-- <div class="aggNameBar" id="agg_name_bar">
 					<div class="emoNames" style="text-align:center">
 						<a>Excited</a>
 					</div>
@@ -55,29 +63,29 @@
 					<div class="emoNames" style="text-align:center">
 						<a>Angry</a>
 					</div>
-				</div>
-				<div class="aggEmo" id="agg_emo">
-					<div class=square_emo id="emoboxexcited" style="padding-bottom:20px"></div>
-					<div class=square_emo id="emoboxhappy" style="padding-bottom:20px"></div>
-					<div class=square_emo id="emoboxneutral" style="padding-bottom:20px"></div>
-					<div class=square_emo id="emoboxconcerned" style="padding-bottom:20px"></div>
-					<div class=square_emo id="emoboxangry" style="padding-bottom:20px"></div>
+				</div> -->
+				<!-- <div class="aggEmo" id="agg_emo">
+					<div class=square_emo id="emoboxexcited"></div>
+					<div class=square_emo id="emoboxhappy"></div>
+					<div class=square_emo id="emoboxneutral"></div>
+					<div class=square_emo id="emoboxconcerned"></div>
+					<div class=square_emo id="emoboxangry"></div>
+				</div> -->
+				<div id="charts">
+					<svg width="700" height="350"></svg>
 				</div>
 			</div>
 		</div>
 		<div class="content">
 			<h1 style="text-align: center">Color of Emotions</h1>
-			<p style="text-align: center">Thank You for Participating in the survey. If you have any commments about the
-				survey or your
-				experience, please insert
-				those in the textbox below.
+			<p style="text-align: justify">Thank You for Participating in the survey. If you have any commment about the
+				survey or your experience, please insert it in the textbox below.
 			</p>
 			<!-- Use a button to pause/play the video with JavaScript -->
 			<textarea class="tarea" id="commentBox" placeholder="Please write your comment here..."></textarea>
 			<button id="exitBtn">Comment</button>
-			<h5 id="finalComment" style="text-align: center">Thank you. Your comment is saved.<h5>
+			<p id="finalComment" style="text-align: justify">Thank you. Your comment is saved.<p>
 		</div>
-
 	</div>
 
 </body>
@@ -87,6 +95,4 @@
 
 <script src="data_log.php"></script>
 <script src="data_log.js"></script>
-<script src="interaction_log.php"></script>
-<script src="interaction_log.js"></script>
 <script src="exit.js"></script>

@@ -1,5 +1,5 @@
 var userID;
-var recordInteractions =true;//if true interaction data will be saved
+var recordInteractions=true;//if true interaction data will be saved
 if (localStorage.getItem("userID_renoir") === null) {
     userID = makeRandomId()
     localStorage.setItem('userID_renoir', userID);
@@ -7,9 +7,10 @@ if (localStorage.getItem("userID_renoir") === null) {
 else{
     userID = localStorage.getItem('userID_renoir');
 }
-console.log('user ID', userID);
+console.log('user ID data', userID);
 function logData(str)
 {
+    console.log("Logging data")
     if(recordInteractions==true){
         var dt = new Date();
         var utcDate = dt.toUTCString();

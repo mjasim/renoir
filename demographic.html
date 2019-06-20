@@ -31,7 +31,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black">
-		<a class="navbar-brand" href="home.html">Color of Emotions</a>
+		<a class="navbar-brand" href="index.html">Color of Emotions</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -61,8 +61,17 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- Modal body text goes here. -->
-					<p></p>
+					<p>Welcome to the color of emotion survey. Emotions are a crucial component of human communication
+						that helps people to express their feelings. However, in online text-based discussions, this
+						indicator is missing, which leads to an incomplete understanding of the discussions. Research
+						shows an association between emotions and colors. We posit colors can help express emotions
+						captured from text data when used appropriately in visualization. In this survey, we want to
+						learn how you associate colors with different emotions. Our goal is to identify a representative
+						color palette to visualize emotions from online discussion text. The survey will take about 10
+						minutes. Thank you for participating in the survey.<br>
+						<a href="Approval.pdf">This study was reviewed and approved by the University of Massachusets
+							Amherst Institutional Review Board</a>
+					</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -73,41 +82,42 @@
 
 	<div class="demoParent" id="demo_parent">
 		<div class="demoInfoBar" id="demo_info_bar">
-			<span class="infoIcon"><i class="fas fa-info-circle fa-lg"
-					style="color:black;margin-left:10px">&nbsp;&nbsp;</i></span> Please fill up
-			the following demographic information. Your information will be encrypted and kept confidential.
+			<h1>Demographics</h1>
+			<p style="font-weight: 500">Please fill up
+				the following demographic information. Your information will be encrypted and kept confidential.<p>
 		</div>
 		<div class="demoContainer" id="demo_container">
 			<form class="needs-validation" novalidate id="demo_form">
 				<div class="form-group row">
-					<label for="inputEmail" class="col-lg-2 col-m-2 col-sm-12 col-form-label">Email Address</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+					<label for="inputEmail" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Email Address (Optional,
+						for raffle draw only)</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<input type="email" class="form-control" id="inputEmail" placeholder="e.g. johndoe@email.com"
 							required>
 						<div class="invalidFeedback" id="emailFeedback">
 						</div>
 					</div>
 				</div>
-				<div class="form-group row">
-					<label for="inputFirstName" class="col-lg-2 col-m-2 col-sm-12 col-form-label">First Name</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+				<!-- <div class="form-group row">
+					<label for="inputFirstName" class="col-lg-3 col-m-3 col-sm-12 col-form-label">First Name</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<input type="text" class="form-control" id="inputFirstName" placeholder="e.g. John" required>
 						<div class="invalidFeedback" id="fnameFeedback">
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="inputLastName" class="col-lg-2 col-m-2 col-sm-12 col-form-label">Last Name</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+					<label for="inputLastName" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Last Name</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<input type="text" class="form-control" id="inputLastName" placeholder="e.g. Doe" required>
 						<div class="invalidFeedback" id="lnameFeedback">
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="form-group row">
-					<label for="ageSelect" class="col-lg-2 col-m-2 col-sm-12 col-form-label">Age Group</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+					<label for="ageSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Age Group</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<select class="form-control" id="ageSelect" required>
 							<option value="">Please select your age group</option>
 							<option>1-10</option>
@@ -126,8 +136,8 @@
 				</div>
 
 				<div class="form-group row">
-					<label for="genderSelect" class="col-lg-2 col-m-2 col-sm-12 col-form-label">Gender</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+					<label for="genderSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Gender</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<select class="form-control" id="genderSelect" required>
 							<option value="">Please select your gender</option>
 							<option>Female</option>
@@ -140,9 +150,23 @@
 					</div>
 				</div>
 
-				<div class="form-group row">
-					<label for="raceSelect" class="col-lg-2 col-m-2 col-sm-12 col-form-label">Ethnicity</label>
-					<div class="col-lg-10 col-m-10 col-sm-12">
+				<div class="form-group row" id="nation">
+					<label for="nationSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Are you a North
+						American?</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
+						<select class="form-control" id="nationSelect" required>
+							<option value="">Please select an option</option>
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+						<div class="invalidFeedback" id="nationFeedback">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group row" id="north_american">
+					<label for="raceSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Ethnicity</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
 						<select class="form-control" id="raceSelect" required>
 							<option value="">Please select your ethnicity</option>
 							<option>White or European American</option>
@@ -160,7 +184,47 @@
 					</div>
 				</div>
 
-				<div class="form-group row">
+				<div class="form-group row" id="not_north_american">
+					<label for="contSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Continent</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
+						<select class="form-control" id="contSelect" required>
+							<option value="">Please select your continent</option>
+							<option>Asia</option>
+							<option>Africa</option>
+							<option>South Ametica</option>
+							<option>Antarctica</option>
+							<option>Europe</option>
+							<option>Oceania</option>
+						</select>
+						<div class="invalidFeedback" id="contFeedback">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group row" id="live">
+					<label for="liveSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">Have you ever lived in
+						North America?</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
+						<select class="form-control" id="liveSelect" required>
+							<option value="">Please select an option</option>
+							<option>Yes</option>
+							<option>No</option>
+						</select>
+						<div class="invalidFeedback" id="liveFeedback">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group row" id="exp">
+					<label for="expSelect" class="col-lg-3 col-m-3 col-sm-12 col-form-label">For how long?</label>
+					<div class="col-lg-9 col-m-9 col-sm-12">
+						<input type="text" class="form-control" id="expSelect" placeholder="" required>
+						<div class="invalidFeedback" id="expFeedback">
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="form-group row">
 					<label for="expSelect" class="col-lg-2 col-m-2 col-sm-12 col-form-label pt-0">Living in Western
 						Cuture</label>
 					<div class="col-lg-10 col-m-10 col-sm-12">
@@ -177,26 +241,33 @@
 						<div class="invalidFeedback" id="expFeedback">
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</form>
-		</div>
-		<div class="demoFooterButtons" id="demo_footer_buttons">
-			<div class="demoFooterPrev" id="demo_footer_prev">
-				<button class="btn btn-primary" type="button" onclick="window.open('home.html','_self')">Back to
-					Home</button>
+			<div class="demoFooterButtons" id="demo_footer_buttons">
+				<div class="demoFooterPrev" id="demo_footer_prev">
+					<button class="btn btn-primary" type="button"
+						onclick="window.open('index.html','_self')">Back</button>
+				</div>
+				<div class="demoFooterNext" id="demo_footer_next">
+					<!-- <button class="btn btn-primary" type="button" onclick="window.open('survey.html','_self')">Proceed to Colors</button> -->
+					<button class="btn btn-primary" type="button">Next</button>
+				</div>
 			</div>
-			<div class="demoFooterNext" id="demo_footer_next">
-				<!-- <button class="btn btn-primary" type="button" onclick="window.open('survey.html','_self')">Proceed to Colors</button> -->
-				<button class="btn btn-primary" type="button">Proceed to
-					Colors</button>
+			<div class="demoFooterIcons" id="demo_footer_icons">
+				<span>
+					<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+					<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
+				</span>
+				</span>
 			</div>
-		</div>
-		<div class="demoFooterIcons" id="demo_footer_icons">
-			<span>
-				<i class="fas fa-circle" style="color:black">&nbsp;&nbsp;</i>
-				<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i>
-				<i class="far fa-circle" style="color:black">&nbsp;&nbsp;</i></span>
-			</span>
 		</div>
 	</div>
 

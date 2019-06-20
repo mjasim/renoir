@@ -35,17 +35,16 @@
   #homeBtn {
     width: 200px;
     font-size: 18px;
-    padding: 10px;
-    border: solid thin black;
+    /* padding: 10px; */
+    /* border: solid thin black; */
     border-radius:50px;
-    background: #000;
-    color: #f1f1f1;
+    background: #f1f1f1;
+    border: solid thin #f1f1f1;
+    color: black;
     cursor: pointer;
     transition: 0.2s;
   }
   
   #homeBtn:hover {
-    background: #FFC107;
-    border: solid thin #FFC107;
-    color: black;
+    border: solid thin black;
   }
